@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     <>
       <IonPage id="main-content">
         <IonContent>
-            {/* <header className="header bg-light-blue">
+            <header className="header bg-light-blue">
               <div className="img__container">
                 <div className="flex justify-center">
                   <div className='translate-y-1/2 bg-light-blue rounded-[50%] p-6'>
@@ -41,7 +41,7 @@ const Login: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </header> */}
+            </header>
             <main className="bg-primary-blue min-h-screen">
               <div className="min-h-screen flex items-center justify-center">
                 <form className='w-4/5 max-w-lg' onSubmit={handleSubmit}>
