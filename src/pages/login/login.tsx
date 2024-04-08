@@ -45,15 +45,14 @@ const Login: React.FC = () => {
             <main className="bg-primary-blue min-h-screen">
               <div className="min-h-screen flex items-center justify-center">
                 <form className='w-4/5 max-w-lg' onSubmit={handleSubmit}>
-                  {/* <IonItem>
+                  <IonItem>
                     <IonLabel>Name</IonLabel>
                     <IonInput type="text" name="name" value={formData.name} onIonChange={handleChange}></IonInput>
                   </IonItem>
                   <IonItem>
                     <IonLabel>Email</IonLabel>
                     <IonInput type="email" name="email" value={formData.email} onIonChange={handleChange}></IonInput>
-                  </IonItem> */}
-                  <input type="email" name="email" value={formData.name} onChange={handleChange}></input>
+                  </IonItem>
                   <IonButton expand="block" onClick={handleSubmit}>Submit</IonButton>
                 </form>
               </div>
