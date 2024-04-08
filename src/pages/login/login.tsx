@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { IonItem, IonLabel, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenu, IonMenuButton, IonMenuToggle, IonPage, IonTitle, IonToolbar, useIonRouter, IonInput } from '@ionic/react';
 import { Link } from 'react-router-dom';
+import { FormInput } from '@/components/shared/form/input';
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: ''
+    email: '',
+    password: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
@@ -33,7 +34,7 @@ const Login: React.FC = () => {
     <>
       <IonPage id="main-content">
         <IonContent>
-            <header className="header bg-light-blue">
+            <header className="header bg-light-blue absolute top-0 left-0 right-0">
               <div className="img__container">
                 <div className="flex justify-center">
                   <div className='translate-y-1/2 bg-light-blue rounded-[50%] p-6'>
@@ -45,15 +46,13 @@ const Login: React.FC = () => {
             <main className="bg-primary-blue min-h-screen">
               <div className="min-h-screen flex items-center justify-center">
                 <form className='w-4/5 max-w-lg' onSubmit={handleSubmit}>
-                  <IonItem>
-                    <IonLabel>Name</IonLabel>
-                    <IonInput type="text" name="name" value={formData.name} onIonChange={handleChange}></IonInput>
-                  </IonItem>
-                  <IonItem>
-                    <IonLabel>Email</IonLabel>
-                    <IonInput type="email" name="email" value={formData.email} onIonChange={handleChange}></IonInput>
-                  </IonItem>
-                  <IonButton expand="block" onClick={handleSubmit}>Submit</IonButton>
+                  <FormInput type="email" name="email" value={formData.email} onChange={handleChange} placeholder='Email' />
+                  <FormInput type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' />
+
+                  <div className="text-right">
+                    <Link to="/password-reset" className=" text-right text-slate-600">Forgot Password?</Link>
+                  </div>
+                  <IonButton type="submit" className="w-full text-white rounded-[5px] p-2 mt-4">Login</IonButton>
                 </form>
               </div>
             </main>
