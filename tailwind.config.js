@@ -26,11 +26,23 @@ module.exports = {
       backgroundImage: {
       },
       fontFamily: {
+        'h': ['Montserrat', 'sans-serif'],
+        'sh': ['Penultimate', 'sans-serif'],
+      },
+      fontSize: {
+        'h1': '2.25em',
+        'h2': '1.875em',
+        'h3': '1.5em',
+        'h4': '1.25em',
+        'h5': '1.125em',
+        'h6': '1em', 
+        'p': '1em',
       },
       colors: {
         "light-blue": "#017cff",
         "primary-blue": "#012cb8",
         "muted-blue": "#6fbaf7",
+        "input-black": "#000000",
       }
     },
   },

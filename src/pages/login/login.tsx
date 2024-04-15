@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonItem, IonLabel, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenu, IonMenuButton, IonMenuToggle, IonPage, IonTitle, IonToolbar, useIonRouter, IonInput } from '@ionic/react';
+import { IonButton, IonContent, IonPage } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import { FormInput } from '@/components/shared/form/input';
 
@@ -44,16 +44,21 @@ const Login: React.FC = () => {
               </div>
             </header>
             <main className="bg-primary-blue min-h-screen">
-              <div className="min-h-screen flex items-center justify-center">
-                <form className='w-4/5 max-w-lg' onSubmit={handleSubmit}>
-                  <FormInput type="email" name="email" value={formData.email} onChange={handleChange} placeholder='Email' />
-                  <FormInput type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' />
-
-                  <div className="text-right">
-                    <Link to="/password-reset" className=" text-right text-slate-600">Forgot Password?</Link>
-                  </div>
-                  <IonButton type="submit" className="w-full text-white rounded-[5px] p-2 mt-4">Login</IonButton>
-                </form>
+              <div className="min-h-screen flex flex-col items-center justify-center">
+                <div className="flex flex-col mb-5 justify-center items-center">
+                  <h5 className='text-gray-200 font-sh text-h5'>Welcome to</h5>
+                  <h2 className='text-gray-200 font-h text-h2'>ScholarGo</h2>
+                </div>
+                <div className="w-full flex flex-col items-center justify-center">
+                  <form className='w-4/5 max-w-lg' onSubmit={handleSubmit}>
+                    <FormInput type="email" name="email" value={formData.email} onChange={handleChange} placeholder='Email' />
+                    <FormInput type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' />
+                    <div className="text-right">
+                      <Link to="/password-reset" className=" text-right text-gray-500">Forgot Password?</Link>
+                    </div>
+                    <IonButton type="submit" className="w-full text-white rounded-[5px] mt-4">Login</IonButton>
+                  </form>
+                </div>
               </div>
             </main>
         </IonContent>
